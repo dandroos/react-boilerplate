@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
+import { Box, Container, Typography } from '@mui/material'
+import { connect } from 'react-redux'
 
-function App() {
+function App({ deviceType }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Box
+      minHeight={'100vh'}
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      textAlign='center'
+    >
+      <Container>
+        <Typography>The current device type is set to {deviceType}</Typography>
+      </Container>
+    </Box>
+  )
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  deviceType: state.deviceType,
+})
+
+export default connect(mapStateToProps)(App)
