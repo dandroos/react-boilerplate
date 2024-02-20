@@ -1,20 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
-import { Provider } from 'react-redux'
-import store from './redux/store'
-import { CssBaseline, ThemeProvider } from '@mui/material'
-import theme from './theme'
-import DeviceTypeDetector from './components/DeviceDetector'
+import React from "react"
+import ReactDOM from "react-dom/client"
+import "./index.css"
+import App from "./App"
+import reportWebVitals from "./reportWebVitals"
+import { Provider } from "react-redux"
+import store from "./redux/store"
+import { CssBaseline, ThemeProvider } from "@mui/material"
+import theme from "./theme"
+import WindowPropertiesListener from "./components/DeviceDetector"
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <DeviceTypeDetector />
+        <WindowPropertiesListener />
         <CssBaseline />
         <App />
       </ThemeProvider>
